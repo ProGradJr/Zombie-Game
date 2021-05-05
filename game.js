@@ -62,13 +62,6 @@ function zombieDestruct(zombie) {
   makeZombie();
 }
 
-//End Game
-
-function endGame(status) {
-  backgroundSound.pause();
-  console.log("game-over");
-}
-
 // Timer
 
 var timer = setInterval(function () {
@@ -79,12 +72,12 @@ var timer = setInterval(function () {
     zombieDestruct(zombie);
     if (lives == 0) {
       clearInterval(timer);
-      endGame("lost");
+      location.href = "./game-over.html";
     }
   }
   if (seconds == 0) {
     clearInterval(timer);
-    endGame("won");
+    location.href = "./win.html";
   }
 }, 1000);
 
